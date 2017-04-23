@@ -2,7 +2,7 @@ var BasicCard = require("./BasicCard.js");
 var ClozeCard = require("./ClozeCard.js");
 
 try {
-    var firstPresident = new BasicCard(
+    var firstPresident = BasicCard(
         "Who was the first president of the United States?", "George Washington");
 
     // "Who was the first president of the United States?"
@@ -11,7 +11,7 @@ try {
     // "George Washington"
     console.log(firstPresident.back);
 
-    var firstPresidentCloze = new ClozeCard(
+    var firstPresidentCloze = ClozeCard(
         "George Washington was the first president of the United States.", "George Washington");
 
     // "George Washington"
