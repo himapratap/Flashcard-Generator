@@ -1,11 +1,30 @@
 {
     "clozeCards": [{
-        "text": "a was the first president of the United States.",
-        "cloze": "a"
+            "text": "Mangoes are known as the 'King of fruits'.",
+            "cloze": "Mangoes"
 
-    }],
+        },
+        {
+            "text": "Istanbul city is the only city in the world situated on two continents?",
+            "cloze": "Istanbul"
+
+        },
+        {
+            "text": "1 mile = 8 furlongs ",
+            "cloze": "8"
+
+        }
+    ],
     "basicCards": [{
-        "front": "Who was the first President of the United States",
-        "back": "a"
-    }]
+            "front": "Who was the first President of the United States",
+            "back": "a"
+        },
+        {
+            "front": "What were exterminated from Harvard's bio labs when they were found to be carrying radioactive chemicals into the walls",
+            "back": "Ants"
+        }, {
+            "front": "Scissors were invented by who?",
+            "back": "Leonardo Da Vinci"
+        }
+    ]
 }

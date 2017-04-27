@@ -19,7 +19,7 @@ try {
             message: currentCard.partial,
             name: "answer",
         }]).then(function(input) {
-            if (input.answer == currentCard.cloze) {
+            if (input.answer.toLowerCase() == currentCard.cloze.toLowerCase()) {
                 console.log("That's the correct answer!!");
                 score++;
             } else {
@@ -46,7 +46,7 @@ try {
             message: currentCard.front,
             name: "answer",
         }]).then(function(input) {
-            if (input.answer == currentCard.back) {
+            if (input.answer.toLowerCase() == currentCard.back.toLowerCase()) {
                 console.log("That's the correct answer!!");
                 score++;
 
@@ -69,12 +69,12 @@ try {
 
     function initGame() {
         loadCards();
-        console.log(" Hey, Let us play the World Fact !");
+        console.log("Let us play the World Fact !");
         inquirer.prompt([{
             type: 'list',
             message: 'So what do you want to play today?',
             name: "choice",
-            choices: ["1.Basic Card Game", "2. Cloze Card Game", "3. Na , I'm leaving"]
+            choices: ["1.Basic Card Game", "2. Cloze Card Game", "3. Nah , I'm leaving"]
         }]).then(function(input) {
             console.log(input.choice);
             var choice = input.choice;
