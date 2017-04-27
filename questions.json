@@ -1,0 +1,11 @@
+{
+    "clozeCards": [{
+        "text": "a was the first president of the United States.",
+        "cloze": "a"
+
+    }],
+    "basicCards": [{
+        "front": "Who was the first President of the United States",
+        "back": "a"
+    }]
+}
