@@ -23,14 +23,16 @@ try {
                 console.log("That's the correct answer!!");
                 score++;
             } else {
-                console.log("Sorry, the correct answer is: ", currentCard.cloze);
+                console.log("Sorry, the correct answer is: ");
+                console.log(currentCard.cloze);
             }
             console.log("=============================================================");
             cardNo++;
             if (cardNo < clozeCards.length) {
                 playClozeCards();
             } else {
-                console.log("Hey your score is : ", score);
+                console.log("You scored: ", score , " out of", cardNo );
+                console.log("Game Over!");
 
             }
         });
@@ -39,7 +41,6 @@ try {
     }
 
     function playBasicCards() {
-        console.log(" Playing card :", cardNo);
         currentCard = basicCards[cardNo];
         inquirer.prompt([{
             type: 'input',
@@ -51,7 +52,9 @@ try {
                 score++;
 
             } else {
-                console.log("Sorry, the correct answer is: ", currentCard.back);
+                console.log("Sorry, the correct answer is: ");
+                console.log(currentCard.back);
+
             }
             console.log("=============================================================");
 
@@ -59,7 +62,8 @@ try {
             if (cardNo < basicCards.length) {
                 playBasicCards();
             } else {
-                console.log("Hey your score is : ", score);
+                console.log("You scored: ", score , " out of ",cardNo);
+                console.log("Game Over!");
             }
         });
 
@@ -69,20 +73,19 @@ try {
 
     function initGame() {
         loadCards();
-        console.log("Let us play the World Fact !");
+        console.log(" Welcome to the World Facts Quiz !");
         inquirer.prompt([{
             type: 'list',
-            message: 'So what do you want to play today?',
+            message: ' So what do you want to play today?',
             name: "choice",
-            choices: ["1.Basic Card Game", "2. Cloze Card Game", "3. Nah , I'm leaving"]
+            choices: ["1. Basic Card Game", "2. Cloze Card Game", "3. Nah, I'm leaving"]
         }]).then(function(input) {
-            console.log(input.choice);
             var choice = input.choice;
             switch (choice) {
                 case "3. Na , I'm leaving":
                     console.log("Have a great day ahead");
                     break;
-                case '1.Basic Card Game':
+                case '1. Basic Card Game':
                     playBasicCards();
                     break;
 
@@ -97,7 +100,7 @@ try {
     }
 
     function loadCards() {
-        console.log('Loading Cards ..');
+        console.log(' Loading Game ..');
         var clozeCardData = data.clozeCards;
         for (var i = 0; i < clozeCardData.length; i++) {
             clozeCards.push(ClozeCard(clozeCardData[i].text, clozeCardData[i].cloze));
@@ -106,7 +109,7 @@ try {
         for (var i = 0; i < basicCardData.length; i++) {
             basicCards.push(BasicCard(basicCardData[i].front, basicCardData[i].back));
         }
-        console.log('Loading complete!');
+        console.log(' Loading Complete!');
     }
 
     initGame();
@@ -114,6 +117,4 @@ try {
 
 } catch (e) {
     console.log(e);
-} finally {
-    console.log("Done !");
 }
